@@ -1,5 +1,5 @@
-const el1 = document.getElementsByClassName("fas")[0];
-const el2 = document.getElementsByClassName("fas")[1];
+const el1 = document.querySelector(".fas");
+const el2 = document.querySelector(".close .fas");
 const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 
 el1.addEventListener( 'click',
@@ -9,11 +9,16 @@ el1.addEventListener( 'click',
 );
 
 el2.addEventListener( 'click',
-
     function(){
         hamburgerMenu.style.display = "none";
-    }    
-
+    }
 );
 
-console.log(screen.width);
+window.addEventListener( 'resize',
+    function(){
+        if(screen.width>1000){
+            hamburgerMenu.style.display = "none";
+        }
+    }
+);
+
